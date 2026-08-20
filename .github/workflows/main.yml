@@ -97,4 +97,3 @@ jobs:
           build/wireless_esp_dap_app.bin
           build/bootloader/bootloader.bin
           build/partition_table/partition-table.bin
-para solo compilar el esp32?
