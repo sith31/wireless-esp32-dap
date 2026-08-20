@@ -1,11 +1,10 @@
 name: build
 
-
 on:
-    push:
-      paths-ignore:
-      - '**.md'
-      - 'circuit'
+  push:
+    paths-ignore:
+      - '**.md'
+      - 'circuit/**'
 
 
 # env:
