@@ -10,15 +10,13 @@
 #ifndef __WIFI_CONFIGURATION__
 #define __WIFI_CONFIGURATION__
 
-
 static struct {
-    const char *Sithcamp;
-    const char *Yonkis123;
+    const char *ssid;
+    const char *password;
 } wifi_list[] __attribute__((unused)) = {
+    {.ssid = "Sithcamp", .password = "Yonkis123"},
     {.ssid = "OTA", .password = "12345678"},
     {.ssid = "DAP", .password = "12345678"},
-    // Add your WAP like this:
-    // {.ssid = "your ssid", .password = "your password"},
 };
 
 #define WIFI_LIST_SIZE (sizeof(wifi_list) / sizeof(wifi_list[0]))
@@ -48,7 +46,7 @@ static struct {
 
 #define PORT                3240
 #define CONFIG_EXAMPLE_IPV4 1
-#define USE_KCP             0
+#define USE_KCP              0
 #define MTU_SIZE            1500
 //
 
@@ -59,7 +57,6 @@ static struct {
 #if (USE_KCP == 1)
 #warning KCP is a very experimental feature, and it should not be used under any circumstances. Please make sure what you are doing. Related usbip version: https://github.com/windowsair/usbip-win
 #endif
-
 
 extern int printf(const char *, ...);
 inline int os_printf(const char *__restrict __fmt, ...)  {
