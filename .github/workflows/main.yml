@@ -17,7 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: false
+
+      - name: Initialize submodules (fix broken tinydtls mirror)
+        run: |
+          git config --global url."https://github.com/eclipse-tinydtls/tinydtls.git".insteadOf "https://git.eclipse.org/r/tinydtls/org.eclipse.tinydtls"
+          git submodule update --init --recursive
 
       - name: before_install
         if: matrix.target-hardware == 'esp8266'
